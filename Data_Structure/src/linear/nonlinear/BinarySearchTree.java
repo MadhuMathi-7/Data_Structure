@@ -1,3 +1,4 @@
+//Insertion (preprder,postorder,inorder)
 package nonlinear;
 class STNode{
     int data;
@@ -44,15 +45,36 @@ public class BinarySearchTree {
             preorder(root.right);
         }
     }
-
+    public static void inorder(STNode root) {
+        if (root != null) {
+            inorder(root.left);
+            System.out.print(root.data + " ");
+            inorder(root.right);
+        }
+    }
+    public static void postorder(STNode root) {
+        if (root != null) {
+            postorder(root.left);
+            postorder(root.right);
+            System.out.print(root.data + " ");
+        }
+    }
     public static void main(String[] args) {
-        insert(26);
+    	insert(26);
         insert(22);
         insert(120);
         insert(70);
         insert(7);
         insert(11);
         insert(6);
+        System.out.print("Preorder: ");
         preorder(root);
+        System.out.println();
+        System.out.print("Inorder: ");
+        inorder(root);
+        System.out.println();
+        System.out.print("Postorder: ");
+        postorder(root);
+        System.out.println();
     }
 }
