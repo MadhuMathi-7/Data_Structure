@@ -1,4 +1,4 @@
-//Insertion (preprder,postorder,inorder)
+//Binary Sreach Tree(INSERTION-preorder,postorder,inorder,search)
 package nonlinear;
 class STNode{
     int data;
@@ -21,7 +21,7 @@ public class BinarySearchTree {
                 if(data>current.data) {
                     if(current.right==null) {
                         current.right=node;
-                        break;
+                         break;
                     }
                     else {
                         current=current.right;
@@ -52,6 +52,21 @@ public class BinarySearchTree {
             inorder(root.right);
         }
     }
+    public static STNode search(STNode root,int data) {
+    	STNode current=root;
+    	while(current!=null) {
+    		if(current.data==data) {
+    			return current;
+    		}
+    		else if(data<current.data) {
+    			current=current.left;
+    		}
+    		else {
+    			current=current.right;
+    		}
+    	}
+    	return null;
+    }
     public static void postorder(STNode root) {
         if (root != null) {
             postorder(root.left);
@@ -76,5 +91,11 @@ public class BinarySearchTree {
         System.out.print("Postorder: ");
         postorder(root);
         System.out.println();
+        if(search(root,70)!=null) {
+        	System.out.println("Data is in BST");
+        }
+        else {
+        	System.out.println("Data is not in BST");
+        }
     }
 }
