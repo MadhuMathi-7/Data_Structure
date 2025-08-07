@@ -1,3 +1,4 @@
+//Creation,Left rotate,right rotate,insert,preorder,postorder,search
 package nonlinear;
 class ANode{
     int data,height;
@@ -132,4 +133,5 @@ public class Avl{
             System.out.println("Data not found");
         }
     }
+
 }
